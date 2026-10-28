@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#145747">
+  <title>Nusa Bale | Pokdarwis Pulau Miang</title>
+  <style>
+    :root {
+      --hijau: #145747;
+      --toska: #159e91;
+      --latar: #f3f7f5;
+      --teks: #20332d;
+      --putih: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: var(--teks);
+      background: var(--latar);
+    }
+
+    header {
+      background: var(--hijau);
+      color: white;
+      padding: 24px 20px;
+      border-radius: 0 0 24px 24px;
+    }
+
+    .wadah {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 16px;
+    }
+
+    header h1 { margin: 0; font-size: 27px; }
+    header p { margin: 7px 0 0; color: #d5eee5; }
+
+    main { padding: 22px 0 40px; }
+
+    .judul {
+      margin: 24px 0 12px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .kartu {
+      background: var(--putih);
+      padding: 17px;
+      border-radius: 16px;
+      box-shadow: 0 3px 12px #173d3010;
+      border: 1px solid #e1ebe6;
+    }
+
+    .angka { font-size: 23px; font-weight: 750; margin-top: 8px; }
+    .keterangan { font-size: 13px; color: #64766e; }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--teks);
+      background: white;
+      padding: 17px 12px;
+      border-radius: 14px;
+      border: 1px solid #e1ebe6;
+      font-weight: 650;
+    }
+
+    .menu a span {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .info {
+      background: #e1f4ee;
+      padding: 16px;
+      border-radius: 14px;
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64766e;
+      font-size: 12px;
+    }
+
+    @media (min-width: 700px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+      .menu { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wadah">
+      <h1>🌊 NUSA BALE</h1>
+      <p>Pokdarwis Nusa Bale · Pulau Miang</p>
+      <p>Sistem penyewaan dan keuangan bersama</p>
+    </div>
+  </header>
+
+  <main class="wadah">
+    <h2 class="judul">Ringkasan Keuangan</h2>
+
+    <div class="grid">
+      <div class="kartu">
+        <div class="keterangan">Saldo kas</div>
+        <div class="angka">Rp0</div>
+      </div>
+      <div class="kartu">
+        <div class="keterangan">Pendapatan sewa</div>
+        <div class="angka">Rp0</div>
+      </div>
+      <div class="kartu">
+        <div class="keterangan">Uang di petugas</div>
+        <div class="angka">Rp0</div>
+      </div>
+      <div class="kartu">
+        <div class="keterangan">Tagihan tersisa</div>
+        <div class="angka">Rp0</div>
+      </div>
+    </div>
+
+    <h2 class="judul">Menu Utama</h2>
+
+    <nav class="menu">
+      <a href="#sewa"><span>📝</span>Transaksi Sewa</a>
+      <a href="#inventaris"><span>🤿</span>Inventaris Barang</a>
+      <a href="#setoran"><span>💵</span>Setoran Petugas</a>
+      <a href="#kas"><span>🏦</span>Kas Masuk/Keluar</a>
+      <a href="#laporan"><span>📊</span>Laporan Keuangan</a>
+      <a href="#pengaturan"><span>⚙️</span>Pengaturan</a>
+    </nav>
+
+    <div class="info">
+      <strong>Informasi aplikasi</strong><br>
+      Ini adalah tampilan awal Nusa Bale.
+      Data keuangan belum terhubung ke database.
+      Jangan gunakan angka contoh sebagai laporan nyata.
+    </div>
+  </main>
+
+  <footer>
+    Pokdarwis Nusa Bale Pulau Miang · Versi awal
+  </footer>
+</body>
+</html>
