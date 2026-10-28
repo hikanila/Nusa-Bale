@@ -5,46 +5,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#145747">
+  <meta name="description" content="Aplikasi penyewaan dan keuangan Pokdarwis Nusa Bale Pulau Miang">
   <title>Nusa Bale | Pokdarwis Pulau Miang</title>
+
   <style>
     :root {
       --hijau: #145747;
+      --hijau-gelap: #0d4438;
       --toska: #159e91;
       --latar: #f3f7f5;
       --teks: #20332d;
       --putih: #ffffff;
+      --garis: #e1ebe6;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       color: var(--teks);
       background: var(--latar);
     }
 
-    header {
-      background: var(--hijau);
-      color: white;
-      padding: 24px 20px;
-      border-radius: 0 0 24px 24px;
-    }
-
     .wadah {
-      max-width: 1000px;
+      width: 100%;
+      max-width: 1100px;
       margin: auto;
-      padding: 0 16px;
+      padding-left: 18px;
+      padding-right: 18px;
     }
 
-    header h1 { margin: 0; font-size: 27px; }
-    header p { margin: 7px 0 0; color: #d5eee5; }
+    header {
+      color: white;
+      background: linear-gradient(135deg, var(--hijau-gelap), var(--hijau), var(--toska));
+      padding: 28px 0;
+      border-radius: 0 0 26px 26px;
+      box-shadow: 0 5px 20px #14574720;
+    }
 
-    main { padding: 22px 0 40px; }
+    .kepala {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-pokdarwis {
+      width: 88px;
+      height: 88px;
+      flex-shrink: 0;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 3px 12px #00000020;
+    }
+
+    .identitas {
+      min-width: 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 7px 0 0;
+      color: #d5eee5;
+      line-height: 1.5;
+    }
+
+    .label-aplikasi {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 11px;
+      border: 1px solid #ffffff55;
+      border-radius: 30px;
+      font-size: 12px;
+      color: white;
+    }
+
+    main {
+      padding: 26px 0 38px;
+    }
+
+    .baris-judul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
 
     .judul {
-      margin: 24px 0 12px;
-      font-size: 18px;
+      margin: 0;
+      font-size: 21px;
+      color: var(--hijau);
+    }
+
+    .tanggal {
+      color: var(--hijau);
+      background: #e1f4ee;
+      padding: 8px 12px;
+      border-radius: 30px;
+      font-size: 12px;
     }
 
     .grid {
@@ -54,112 +124,344 @@
     }
 
     .kartu {
+      min-width: 0;
       background: var(--putih);
-      padding: 17px;
+      padding: 18px;
       border-radius: 16px;
       box-shadow: 0 3px 12px #173d3010;
-      border: 1px solid #e1ebe6;
+      border: 1px solid var(--garis);
     }
 
-    .angka { font-size: 23px; font-weight: 750; margin-top: 8px; }
-    .keterangan { font-size: 13px; color: #64766e; }
+    .kartu:nth-child(1) {
+      border-top: 4px solid #21966d;
+    }
+
+    .kartu:nth-child(2) {
+      border-top: 4px solid #328bd2;
+    }
+
+    .kartu:nth-child(3) {
+      border-top: 4px solid #e4a52e;
+    }
+
+    .kartu:nth-child(4) {
+      border-top: 4px solid #df6464;
+    }
+
+    .keterangan {
+      font-size: 13px;
+      color: #64766e;
+    }
+
+    .angka {
+      font-size: clamp(20px, 3vw, 27px);
+      font-weight: 750;
+      margin-top: 7px;
+      color: var(--hijau);
+      overflow-wrap: anywhere;
+    }
+
+    .bagian-menu {
+      margin-top: 30px;
+    }
 
     .menu {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 13px;
+      margin-top: 14px;
     }
 
     .menu a {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
       text-decoration: none;
       color: var(--teks);
       background: white;
-      padding: 17px 12px;
-      border-radius: 14px;
-      border: 1px solid #e1ebe6;
-      font-weight: 650;
+      padding: 17px 13px;
+      border-radius: 16px;
+      border: 1px solid var(--garis);
+      box-shadow: 0 3px 12px #173d3008;
+      transition: transform .15s, box-shadow .15s;
     }
 
-    .menu a span {
-      display: block;
+    .menu a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px #173d3015;
+    }
+
+    .ikon-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      background: #e1f4ee;
+      border-radius: 13px;
       font-size: 25px;
-      margin-bottom: 9px;
+    }
+
+    .menu a:nth-child(2) .ikon-menu,
+    .menu a:nth-child(6) .ikon-menu {
+      background: #e5f1ff;
+    }
+
+    .menu a:nth-child(3) .ikon-menu {
+      background: #fff2d7;
+    }
+
+    .menu a:nth-child(4) .ikon-menu {
+      background: #eeeaff;
+    }
+
+    .menu a:nth-child(5) .ikon-menu {
+      background: #ffe9e9;
+    }
+
+    .menu-teks {
+      min-width: 0;
+    }
+
+    .menu-teks strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .menu-teks small {
+      display: block;
+      margin-top: 4px;
+      color: #64766e;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 400;
     }
 
     .info {
-      background: #e1f4ee;
+      background: #e1f1ff;
+      border: 1px solid #d3e8fb;
       padding: 16px;
-      border-radius: 14px;
-      margin-top: 18px;
-      font-size: 14px;
-      line-height: 1.6;
+      border-radius: 15px;
+      margin-top: 24px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .info strong {
+      color: #164d78;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      color: #64766e;
+      padding: 24px 18px;
+      color: #e0f4ed;
+      background: var(--hijau-gelap);
       font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 3px;
+      display: block;
+      margin: 0 auto 9px;
     }
 
     @media (min-width: 700px) {
-      .grid { grid-template-columns: repeat(4, 1fr); }
-      .menu { grid-template-columns: repeat(3, 1fr); }
+      .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .menu {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      main {
+        padding-top: 32px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .wadah {
+        padding-left: 13px;
+        padding-right: 13px;
+      }
+
+      header {
+        padding: 22px 0;
+      }
+
+      .kepala {
+        gap: 12px;
+      }
+
+      .logo-pokdarwis {
+        width: 64px;
+        height: 64px;
+      }
+
+      header p {
+        font-size: 12px;
+      }
+
+      .label-aplikasi {
+        font-size: 10px;
+      }
+
+      .kartu {
+        padding: 14px 12px;
+      }
+
+      .menu {
+        gap: 9px;
+      }
+
+      .menu a {
+        padding: 13px 10px;
+        gap: 9px;
+      }
+
+      .ikon-menu {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+      }
+
+      .menu-teks strong {
+        font-size: 12px;
+      }
+
+      .menu-teks small {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="wadah">
-      <h1>🌊 NUSA BALE</h1>
-      <p>Pokdarwis Nusa Bale · Pulau Miang</p>
-      <p>Sistem penyewaan dan keuangan bersama</p>
+    <div class="wadah kepala">
+      <img
+        class="logo-pokdarwis"
+        src="WhatsApp%20Image%202026-10-28%20at%2021.00.00.jpeg"
+        alt="Logo resmi Pokdarwis Nusa Bale"
+      >
+
+      <div class="identitas">
+        <h1>NUSA BALE</h1>
+        <p>Pokdarwis Nusa Bale · Pulau Miang</p>
+        <p>Sistem penyewaan dan keuangan bersama</p>
+        <span class="label-aplikasi">Aplikasi pengelolaan Pokdarwis</span>
+      </div>
     </div>
   </header>
 
   <main class="wadah">
-    <h2 class="judul">Ringkasan Keuangan</h2>
+    <section aria-labelledby="judul-keuangan">
+      <div class="baris-judul">
+        <h2 class="judul" id="judul-keuangan">Ringkasan Keuangan</h2>
+        <span class="tanggal">🏝️ Pokdarwis Pulau Miang</span>
+      </div>
 
-    <div class="grid">
-      <div class="kartu">
-        <div class="keterangan">Saldo kas</div>
-        <div class="angka">Rp0</div>
-      </div>
-      <div class="kartu">
-        <div class="keterangan">Pendapatan sewa</div>
-        <div class="angka">Rp0</div>
-      </div>
-      <div class="kartu">
-        <div class="keterangan">Uang di petugas</div>
-        <div class="angka">Rp0</div>
-      </div>
-      <div class="kartu">
-        <div class="keterangan">Tagihan tersisa</div>
-        <div class="angka">Rp0</div>
-      </div>
-    </div>
+      <div class="grid">
+        <div class="kartu">
+          <div class="keterangan">💰 Saldo kas</div>
+          <div class="angka">Rp0</div>
+        </div>
 
-    <h2 class="judul">Menu Utama</h2>
+        <div class="kartu">
+          <div class="keterangan">📈 Pendapatan sewa</div>
+          <div class="angka">Rp0</div>
+        </div>
 
-    <nav class="menu">
-      <a href="#sewa"><span>📝</span>Transaksi Sewa</a>
-      <a href="#inventaris"><span>🤿</span>Inventaris Barang</a>
-      <a href="#setoran"><span>💵</span>Setoran Petugas</a>
-      <a href="#kas"><span>🏦</span>Kas Masuk/Keluar</a>
-      <a href="#laporan"><span>📊</span>Laporan Keuangan</a>
-      <a href="#pengaturan"><span>⚙️</span>Pengaturan</a>
-    </nav>
+        <div class="kartu">
+          <div class="keterangan">👥 Uang di petugas</div>
+          <div class="angka">Rp0</div>
+        </div>
+
+        <div class="kartu">
+          <div class="keterangan">🧾 Tagihan tersisa</div>
+          <div class="angka">Rp0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bagian-menu" aria-labelledby="judul-menu">
+      <h2 class="judul" id="judul-menu">Menu Utama</h2>
+
+      <nav class="menu">
+        <a href="#sewa">
+          <span class="ikon-menu">📝</span>
+          <span class="menu-teks">
+            <strong>Transaksi Sewa</strong>
+            <small>Catat penyewaan barang dan pembayaran</small>
+          </span>
+        </a>
+
+        <a href="#inventaris">
+          <span class="ikon-menu">🤿</span>
+          <span class="menu-teks">
+            <strong>Inventaris Barang</strong>
+            <small>Data barang, kondisi, dan tarif sewa</small>
+          </span>
+        </a>
+
+        <a href="#setoran">
+          <span class="ikon-menu">💵</span>
+          <span class="menu-teks">
+            <strong>Setoran Petugas</strong>
+            <small>Catatan uang yang disetorkan</small>
+          </span>
+        </a>
+
+        <a href="#kas">
+          <span class="ikon-menu">🏦</span>
+          <span class="menu-teks">
+            <strong>Kas Masuk/Keluar</strong>
+            <small>Pencatatan penerimaan dan pengeluaran</small>
+          </span>
+        </a>
+
+        <a href="#laporan">
+          <span class="ikon-menu">📊</span>
+          <span class="menu-teks">
+            <strong>Laporan Keuangan</strong>
+            <small>Rekap dan transparansi keuangan</small>
+          </span>
+        </a>
+
+        <a href="#pengaturan">
+          <span class="ikon-menu">⚙️</span>
+          <span class="menu-teks">
+            <strong>Pengaturan</strong>
+            <small>Anggota, tarif, dan data aplikasi</small>
+          </span>
+        </a>
+      </nav>
+    </section>
 
     <div class="info">
-      <strong>Informasi aplikasi</strong><br>
-      Ini adalah tampilan awal Nusa Bale.
-      Data keuangan belum terhubung ke database.
-      Jangan gunakan angka contoh sebagai laporan nyata.
+      <strong>ℹ️ Informasi aplikasi</strong><br>
+      Ini adalah versi awal tampilan Nusa Bale. Data keuangan
+      belum terhubung ke database. Angka yang ditampilkan masih
+      contoh dan bukan laporan keuangan sebenarnya.
     </div>
   </main>
 
   <footer>
-    Pokdarwis Nusa Bale Pulau Miang · Versi awal
+    <img
+      src="WhatsApp%20Image%202026-10-28%20at%2021.00.00.jpeg"
+      alt="Logo Pokdarwis"
+    >
+    Pokdarwis Nusa Bale Pulau Miang<br>
+    Versi awal · Pengelolaan bersama dan transparan
   </footer>
 </body>
 </html>
